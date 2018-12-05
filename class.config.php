@@ -1,11 +1,18 @@
 <?php
 
 class config {
-    public static function getPath($path)
+    public static function getPath($path = null)
     {
         if($path)
-        {
-            $path = explode("/", $path); 
+        {   
+            $conf = $GLOBALS['mysql'];
+            $path = explode(".", $path); 
+
+            foreach($path as $paths)
+            {
+                $conf = $conf[$paths];
+            }
+            
         }
         return false;
     }

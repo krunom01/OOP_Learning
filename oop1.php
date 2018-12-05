@@ -33,3 +33,5 @@ $k=new Person();
 $k->setName("Kruno");
 $k->setsurName("Marijanovic");
 print_r($k);
+
+echo $GLOBALS["mysql"];
