@@ -2,8 +2,8 @@
 class database{
     private $hostName = 'localhost';
     private $DBname = 'CaffeBar';
-    private $username = 'mirom';
-    private $password = 'kruno';
+    private $username = '';
+    private $password = '';
     public  $connection = null;
 
     public function getConnection(){
