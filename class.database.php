@@ -22,9 +22,16 @@ class database
             die($e->getMessage());
         }
     }
-    public function select($table, $where){
-        return
+    public function select($table){
+        
+        $sql = $this->PDO->prepare("select * from  $table where name=1;");
+        $sql->execute();
+        $allGuests = $sql->fetchall(PDO::FETCH_OBJ);
+        
+       var_dump($allGuests);
+        
+
     }
 }
 $baza = new database;
-$baza->insert();
+$baza->select("test");
