@@ -34,4 +34,16 @@ $k->setName("Kruno");
 $k->setsurName("Marijanovic");
 print_r($k);
 
-echo $GLOBALS["mysql"];
+
+session_start();
+if(empty($_SESSION["start"]))
+{
+	$_SESSION["start"] = 1;
+}
+else
+{
+	$_SESSION["start"]++;
+}
+echo $_SESSION["start"];
+$GLOBALS["array"] = 2;
+var_dump($GLOBALS["array"]);

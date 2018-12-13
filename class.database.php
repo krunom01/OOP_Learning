@@ -1,15 +1,20 @@
 <?php
-class database{
-    private $PDO;
+include_once "class.config.php";
 
-    private function __CONSTRUCT()
+class database
+{
+
+    private $PDO;
+    private $Querry;
+
+    public function __CONSTRUCT()
     {
         try
         {
-            $this->PDO = new PDO('mysql:host='.config::getPath('mysql.localhost').';'.
-                                 'dbname=' .config::getPath('mysql.CafeeBar'),
-                                 config::getPath('mysql.mirom'),
-                                 config::getPath('mysql.kruno'));
+            $this->PDO = new PDO('mysql:host=' . config::getDBvalues("host"). ';'
+                           . 'dbname=' .  config::getDBvalues("dbname"),
+                                 config::getDBvalues("user"),
+                                 config::getDBvalues("pass"));
            
         }
         catch(PDOexception $e)
@@ -17,5 +22,9 @@ class database{
             die($e->getMessage());
         }
     }
+    public function select($table, $where){
+        return
+    }
 }
-
+$baza = new database;
+$baza->insert();

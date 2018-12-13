@@ -21,3 +21,10 @@ $Kruno = new User(31);
 
 echo $Kruno->getPassword("asd");
 
+$x = 10;
+
+function add()
+{
+	echo $GLOBALS['x'];
+}
+add();

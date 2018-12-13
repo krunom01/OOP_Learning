@@ -2,8 +2,8 @@
 class database{
     private $hostName = 'localhost';
     private $DBname = 'CaffeBar';
-    private $username = '';
-    private $password = '';
+    private $username = 'mirom';
+    private $password = 'kruno';
     public  $connection = null;
 
     public function __construct(){

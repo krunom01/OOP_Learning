@@ -1,5 +1,6 @@
 <?php
-include_once "configuration.php";
+include_once "class.database.php";
+
 
 class guest 
 {
@@ -7,7 +8,7 @@ class guest
 
     public function __construct()
     {
-        $this->database = new \MySQLi(SERVER, USERNAME ,PASSWORD, DATABASE);
+        $this->database = new database;
         if(!$this->database)
         {
             die("Connection error: " . mysqli_connect_error());         
@@ -72,4 +73,5 @@ class guest
 
 
 }
+
 
